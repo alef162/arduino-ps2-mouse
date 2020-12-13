@@ -3,13 +3,14 @@
 #define MOUSE_H_
 
 typedef struct {
-    int x, y;
+    int x = 0;
+	int y = 0;
 } Position;
 
 typedef struct {
-    int status;
+    int status = 0;
     Position position;
-    int wheel;
+    int wheel = 0;
 } MouseData;
 
 class PS2Mouse {
@@ -54,6 +55,8 @@ public:
     PS2Mouse(int clockPin, int dataPin);
 
     void initialize();
+	
+	bool supportsIntelliMouseExtensions();
 
     MouseData readData();
 };

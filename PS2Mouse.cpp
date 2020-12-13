@@ -195,3 +195,7 @@ MouseData PS2Mouse::readData() {
 void PS2Mouse::requestData() {
     writeAndReadAck(REQUEST_DATA);
 }
+
+bool PS2Mouse::supportsIntelliMouseExtensions() {
+	return _supportsIntelliMouseExtensions;	
+}
